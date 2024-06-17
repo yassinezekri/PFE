@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony</title>
+    <link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+    <header>
+        <h1>Harmony</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+            <form action="search.html" class="search-bar">
+                <input type="text" placeholder="Search..." name="q">
+                <button type="submit">Search</button>
+            </form>
+            <div class="navbar-container">
+               
+                <div class="navbar-links">
+                    <button id="profileButton">Profile</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to Music Recommendation</h2>
+            <p>Discover new music based on your preferences.</p>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Personalized Recommendations</h3>
+                <p>Get recommendations tailored to your taste in music.</p>
+            </div>
+            <div class="feature">
+                <h3>Search by Genre, Artist, Country, and Language</h3>
+                <p>Find music that fits your mood and interests.</p>
+            </div>
+            <div class="feature">
+                <h3>Simple and Intuitive</h3>
+                <p>Our easy-to-use interface makes finding music a breeze.</p>
+            </div>
+        </section>
+    </main>
+    
+    
+
+    <footer>
+        <p>&copy; 2024 Music Recommendation. All rights reserved.</p>
+        
+    </footer>
+
+      
+
+       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+       <script>
+           $(document).ready(function() {
+               $('#profileButton').on('click', function() {
+                   // Make an AJAX request to check if the user is logged in
+                   $.ajax({
+                       url: '../php/check_login.php',  // PHP script to check if user is logged in
+                       method: 'GET',
+                       success: function(response) {
+                           if (response.trim() === 'loggedin') {
+                               window.location.href = '../php/profile.php';  // Redirect to profile page
+                           } else {
+                               alert('You are not logged in. Redirecting to login page...');
+                               window.location.href = '../html/login.html';  // Redirect to login page
+                           }
+                       },
+                       error: function(xhr, status, error) {
+                           console.error('Error checking login status:', error);
+                       }
+                   });
+               });
+           });
+       </script>
+</body>
+
+</html>
