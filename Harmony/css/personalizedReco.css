@@ -1,0 +1,80 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.song-card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.card-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.card-artist {
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.audio-controls {
+    margin-top: 10px;
+    width: 100%;
+}
+
+.like-button {
+    background: none;
+    border: none;
+    color: #ff0;
+    font-size: 1.5em;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+
+.like-button.active {
+    color: #ff6f61;
+}
+
+#moreButton {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
